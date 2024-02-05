@@ -23,6 +23,7 @@ for index, ticker in enumerate(portfolio.columns):
 del allocation, index, selection, ticker, norm_returns, alloc_return_col, norm_return_col
 portfolio = portfolio.filter(like="Alloc", axis=1)
 
-
+#Compute portfolio value of initial amount invested over lifetime
+portfolio['Total Position'] = init_position * portfolio.sum(axis=1)
 
 print(portfolio.head())
