@@ -21,9 +21,8 @@ for index, ticker in enumerate(portfolio.columns):
     portfolio[alloc_return_col] = norm_returns * weighted_portfolio[index]["weight"]
 
 del allocation, index, selection, ticker, norm_returns, alloc_return_col, norm_return_col
+portfolio = portfolio.filter(like="Alloc", axis=1)
 
-#Compute portfolio value of x amount invested over lifetime
-portfolio['Total Position'] = portfolio.apply(lambda row: print('ello: ', row))
 
 
 print(portfolio.head())
